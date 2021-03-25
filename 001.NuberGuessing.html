@@ -4,13 +4,15 @@
  <meta charset="UTF-8">
  <title>vue组件猜数字游戏</title>
  </head>
- <body>
-  <div id="app">
-	  欢迎来到猜数字游戏！请输入数字，数字范围在1~100：<br />
-	  <input type="text" v-model="num" />
-	  <p v-if=" num>message">抱歉，猜大了！</p>
-	  <p v-if=" num<message">抱歉，猜小了！</p>
-	  <p v-if=" num==message">恭喜，猜对了！</p>
+ <body style="margin: 0px;padding: 0px;background:radial-gradient(#54AF80,#6DC597)">
+  <div id="app" style="text-align: center;font-size: 30px;padding-top: 10%">
+	  <h2>欢迎来到猜数字游戏！请输入数字：<br /></h2>
+	  <input type="text" v-model="num" style="height: 30px; width: 300px;" />
+	  <p v-if="num<=0">数字范围为1~100</p>
+	  <p v-else-if="num>100">数字范围为1~100</p>
+	  <p v-else-if=" num>message">抱歉，猜大了！</p>
+	  <p v-else-if=" num<message">抱歉，猜小了！</p>
+	  <p v-else="num==message">恭喜，猜对了！</p>
   </div>
   <script src="js/vue.js" type="text/javascript" charset="UTF-8"></script>
   <script type="text/javascript">
@@ -18,7 +20,9 @@
 	  	el:'#app',
 		data:{
 			message:Math.round(Math.random()*100),
-			num:0
+			num:0,
+			max:100,
+			min:0,
 		}
 	  })
   </script>
