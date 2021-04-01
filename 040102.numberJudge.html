@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body style="background-color: pink;">
+
+		<div id="app" style="text-align: center;">
+			请输入一个数：
+			<input type="text" v-model="num" />
+			<p v-if="(num%2)==0">你输入的数为：偶数！<br><img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F21317d362c2ee856b121220ba12eef74aded6e6d8942-RBNU9Z_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1619855447&t=7d2f61f26c945a3b109bb9dfc572b029" ></p>
+			<p v-if="(num%2)==1">你输入的数为：奇数！<br><img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3477355638,3543452711&fm=26&gp=0.jpg" >
+		<script type="text/javascript">
+			var v=new Vue({
+				el:'#app',
+				data:{
+					num:'null'
+				}
+			})
+		</script>
+	</body>
+</html>
