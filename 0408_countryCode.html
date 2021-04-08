@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>国家代号查询器</title>
+		<script type="text/javascript" src="js/vue.js" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id= "app1">
+			请输入国家代码（可查代码为86、1、44、33、82）<br />
+			<input type="text" v-model="countryNumber" id="" name="" value="" />
+			{{countryNumber}}
+			<div v-for="country in countries">
+				<div v-if="countryNumber==country.id">
+					国家编号：{{country.id}}<br />
+					国家名字：{{country.name}}<br />
+					首都城市：{{country.city}}
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app1',
+				data:{
+					countryNumber:'',
+					countries:[
+						{id:"86", name:"中国", city:"北京"},
+						{id:"1", name:"美国", city:"华盛顿"},
+						{id:"44", name:"英国", city:"伦敦"},
+						{id:"33", name:"法国", city:"巴黎"},
+						{id:"82", name:"韩国", city:"首尔"}
+					]
+				}
+			})
+		</script>
+		
+	</body>
+</html>

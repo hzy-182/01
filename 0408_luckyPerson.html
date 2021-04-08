@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>幸运用户抽奖</title>
+		<script src="js/vue.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		
+		<div id="app2">
+			幸运抽奖程序：点击按钮产生幸运用户<br />
+			
+			<input type="button" @click="rdm=Math.ceil(Math.random()*10+1)%5;choosePerson=persons[rdm]" value="按钮"/><br />
+			{{choosePerson}}
+			<div v-for="person in persons">
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			let v=new Vue({
+				el:'#app2',
+				data:{
+					rdm:'',
+					choosePerson:'',
+					persons:[
+						{name:'张三', sex:'男', age:'18', code:'1'},
+						{name:'李四', sex:'女', age:'24', code:'2'},
+						{name:'王五', sex:'男', age:'20', code:'3'},
+						{name:'赵六', sex:'男', age:'40', code:'4'},
+						{name:'钱七', sex:'女', age:'40', code:'5'},
+					]
+				}
+			})
+		</script>
+		
+	</body>
+</html>
